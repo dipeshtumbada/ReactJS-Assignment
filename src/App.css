@@ -1,38 +1,182 @@
-.App {
-  text-align: center;
+.columns {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px;
+  background-color: whitesmoke;
+  width: 100%;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.column {
+  background: whitesmoke;
+  padding: 10px;
+  box-shadow: none;
+  min-width: 180px;
+  max-width: 200px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+.column-header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.column-header-content {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon-before {
+  margin-right: 8px;
+}
+
+.column-header h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  margin-right: 10px;
+  color: #2d3a4b;
+}
+
+.icons-after {
+  display: flex;
+  align-items: center;
+}
+
+.add-icon, .three-dot-icon {
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.no-tickets-placeholder {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.ticket-card {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.ticket-card .ticket-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ticket-card .priority-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.ticket-card h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #1f2937;
+}
+
+.ticket-card p {
+  margin: 6px 0;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+.ticket-card .tags {
+  margin-top: 8px;
+}
+
+.ticket-card .tag {
+  display: inline-block;
+  background: #f3f4f6;
+  color: #6b7280;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-right: 6px;
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background: #f9fafc;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow {
+  margin-left: 10px;
+  font-size: 10px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 8px 0;
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #344760;
+}
+
+.dropdown-item:hover {
+  background: #e4ecf7;
+}
+
+.status-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.status-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.status-label {
+  display: flex;
+  align-items: center;
+}
+
+.status-label svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
 }
