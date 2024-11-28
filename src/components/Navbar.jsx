@@ -26,7 +26,7 @@ const Navbar = ({ groupBy, setGroupBy, sortBy, setSortBy }) => {
       {isDropdownOpen && (
         <div className="dropdown-menu">
           <div className="dropdown-row">
-            <label>Grouping</label>
+            <label style={{ color: 'rgba(169, 169, 169, 1)' }}>Grouping</label>
             <div className="select-container">
               <select
                 value={groupBy}
@@ -41,7 +41,7 @@ const Navbar = ({ groupBy, setGroupBy, sortBy, setSortBy }) => {
             </div>
           </div>
           <div className="dropdown-row">
-            <label>Ordering</label>
+            <label style={{ color: 'rgba(169, 169, 169, 1)' }}>Ordering</label>
             <div className="select-container">
               <select
                 value={sortBy}

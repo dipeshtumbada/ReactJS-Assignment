@@ -17,16 +17,44 @@ const getIcon = (priority) => {
   }
 };
 
+const getStatusIcon = (status) => {
+  switch (status) {
+    case "Done":
+      return require("../assets/icons/Done.svg").default; 
+    case "Todo":
+      return require("../assets/icons/To-do.svg").default; 
+    case "Inprogress":
+      return require("../assets/icons/in-progress.svg").default; 
+      case "Cancelled":
+        return require("../assets/icons/Cancelled.svg").default;
+        case "Backlog":
+      return require("../assets/icons/Backlog.svg").default; 
+    default:
+      return null;
+  }
+};
+
 const TicketCard = ({ ticket }) => {
   const icon = getIcon(ticket.priority);
+  const statusIcon = getStatusIcon(ticket.status);
 
   return (
     <div className="ticket-card">
       <div className="ticket-header">
-        <h3>{ticket.id}</h3>
-        <img src={icon} alt={`Priority ${ticket.priority}`} className="priority-icon" />
+        <h3 style={{ color: 'rgba(169, 169, 169, 1)' }}>{ticket.id}</h3>
       </div>
-      <p>{ticket.title}</p>
+
+<div className="p-row">
+    {statusIcon && <img src={statusIcon} alt={ticket.status} className="status-icon" />}
+    <p>{ticket.title}</p>
+  </div>  
+
+      
+      <div className="row-card">
+
+      
+      <img src={icon} alt={`Priority ${ticket.priority}`} className="priority-icon" />
+      
       <div className="tags">
         {ticket.tag.map((tag, index) => (
           <span key={index} className="tag">
@@ -34,6 +62,8 @@ const TicketCard = ({ ticket }) => {
           </span>
         ))}
       </div>
+      </div>
+      
     </div>
   );
 };
